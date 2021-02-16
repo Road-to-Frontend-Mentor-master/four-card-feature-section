@@ -1,0 +1,166 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: #ffffff;
+  --primary-font: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+body {
+  padding: 64px 32px;
+  background-color: var(--very-light-gray);
+}
+
+.paragraph {
+  color: var(--grayish-blue);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.paragraph.is-medium-size {
+  font-size: 15px;
+}
+
+.icon-container .icon {
+  width: 56px;
+}
+
+@media screen and (min-width: 1200px) {
+  .icon-container .icon {
+    width: initial;
+  }
+}
+
+.main-header {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.main-header .paragraph {
+  margin-bottom: 64px;
+}
+
+.main-title {
+  font-weight: 200;
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--very-dark-blue);
+}
+
+@media screen and (min-width: 1200px) {
+  .main-title {
+    font-size: 36px;
+  }
+}
+
+.main-title .bold {
+  display: block;
+  font-weight: 600;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.card {
+  background-color: var(--white);
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px #83A6D288;
+  position: relative;
+  overflow: hidden;
+  max-width: 310px;
+}
+
+.card::before {
+  --border-top-color: var(--cyan);
+
+  background-color: var(--border-top-color);
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+}
+
+.middle-cards .card:nth-child(1)::before { --border-top-color: var(--red) }
+.middle-cards .card:nth-child(2)::before { --border-top-color: var(--orange) }
+
+.card:last-of-type::before { --border-top-color: var(--blue) }
+
+@media screen and (min-width: 1200px) {
+  .card {
+    padding: 32px;
+    max-width: 350px;
+  }
+}
+
+.cards-container .card:not(:last-child),
+.middle-cards {
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 1200px) {
+  .cards-container .card:not(:last-child),
+  .middle-cards {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .middle-cards {
+    margin: 0 32px;
+  }
+
+  .middle-cards .card:first-child {
+    margin-bottom: 32px;
+  }
+}
+
+.card .title {
+  font-size: 20px;
+  color: var(--very-dark-blue);
+}
+
+@media screen and (min-width: 1200px) {
+  .card .title {
+    margin-bottom: 8px;
+  }
+}
+
+.card .paragraph {
+  margin-bottom: 32px;
+}
+
+.card .icon-container {
+  text-align: right;
+}
